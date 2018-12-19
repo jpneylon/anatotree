@@ -3,7 +3,7 @@ import json
 import collections
 
 
-parts = pandas.read_table('tsv/partof_parts_list_e.txt')
+parts = pandas.read_table('../tsv/isa_parts_list_e.txt')
 find_json_parts = False
 if find_json_parts:
     parts_json = []
@@ -14,12 +14,12 @@ if find_json_parts:
         t['name'] = part['name']
         parts_json.append(t)
     p = json.dumps(parts_json)
-    parts_json_file = 'json/partof_parts_list_e.json'
+    parts_json_file = '../json/isa_parts_list_e.json'
     f = open(parts_json_file,'w')
     print >> f, p
 
 
-elements = pandas.read_table('tsv/partof_element_parts.txt')
+elements = pandas.read_table('../tsv/isa_element_parts.txt')
 find_json_elements = False
 if find_json_elements:
     elements_json = []
@@ -36,12 +36,12 @@ if find_json_elements:
         #t['element_file'] = element['element_file_id']
         elements_json.append(t)
     e = json.dumps(elements_json)
-    elements_json_file = 'json/partof_element_parts.json'
+    elements_json_file = '../json/isa_element_parts.json'
     f = open(elements_json_file,'w')
     print >> f, e
 
 
-inclusion = pandas.read_table('tsv/partof_inclusion_relation_list.txt')
+inclusion = pandas.read_table('../tsv/isa_inclusion_relation_list.txt')
 find_json_inclusion = False
 if find_json_inclusion:
     inclusion_json = []
@@ -61,7 +61,7 @@ if find_json_inclusion:
         except:
             no_children = True
     i = json.dumps(inclusion_json)
-    inclusion_json_file = 'json/partof_inclusion_relation_list.json'
+    inclusion_json_file = '../json/isa_inclusion_relation_list.json'
     f = open(inclusion_json_file,'w')
     print >> f, i
 
@@ -93,7 +93,8 @@ def get_children(prnt):
 find_tree = True
 if find_tree:
     tree_json = []
-    body = 'human body'
+    #body = 'human body'
+    body = 'anatomical entity'
     top = collections.OrderedDict()
     top_series = parts[parts['name'].str.match(body)]
     top['id'] = top_series['concept_id'].to_string(index=False)
@@ -109,6 +110,6 @@ if find_tree:
     tree_json.append(top)
 
     t = json.dumps(tree_json)
-    tree_json_file = 'json/partof_tree.json'
+    tree_json_file = '../json/isa_tree.json'
     f = open(tree_json_file,'w')
     print >> f, t

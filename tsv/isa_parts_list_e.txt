@@ -1,4 +1,4 @@
-concept id	representation id	en
+concept_id	representation_id	name
 FMA3710	BP8338	vascular tree
 FMA3711	BP6016	segment of artery
 FMA3714	BP10561	variant artery

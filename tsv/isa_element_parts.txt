@@ -1,4 +1,4 @@
-concept id	name	element file id
+concept_id	name	element_file_id
 FMA3710	vascular tree	FJ2925
 FMA3710	vascular tree	FJ2933
 FMA3710	vascular tree	FJ2944

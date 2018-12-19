@@ -1,4 +1,4 @@
-parent id	parent name	child id	child name
+parent_id	parent_name	child_id	child_name
 FMA3710	vascular tree	FMA14284	venous tree organ
 FMA3711	segment of artery	FMA86254	segment of systemic artery
 FMA3714	variant artery	FMA66267	variant systemic artery

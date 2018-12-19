@@ -53,7 +53,7 @@
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 
-    #d3.json("json/partof_tree.json", function(error, treeData) {
+    // d3.json("json/partof_tree.json", function(error, treeData) {
     d3.json("json/isa_tree.json", function(error, treeData) {
       root = treeData[0];
       root.x0 = height / 2;

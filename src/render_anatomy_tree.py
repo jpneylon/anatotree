@@ -87,10 +87,10 @@ def get_children(prnt):
             t['children'] = get_children(t)
             tier.append(t)
     except:
-        print 'no children found'
+        print('no children found')
     return tier
 
-find_tree = True
+find_tree = False
 if find_tree:
     tree_json = []
     #body = 'human body'
